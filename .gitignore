@@ -6,3 +6,5 @@ checkpoint/
 *.pth
 dataset/debug_tools.py
 debugger/
+kitti_dataset/
+output/

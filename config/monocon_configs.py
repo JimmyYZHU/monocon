@@ -10,12 +10,12 @@ _C.OUTPUT_DIR = "exps"                           # Output Directory
 _C.SEED = -1                                     # -1: Random Seed Selection
 _C.GPU_ID = 0                                    # Index of GPU to use
 
-_C.USE_BENCHMARK = True                          # Value of 'torch.backends.cudnn.benchmark' and 'torch.backends.cudnn.enabled'
+_C.USE_BENCHMARK = False                          # Value of 'torch.backends.cudnn.benchmark' and 'torch.backends.cudnn.enabled'
 
 
 # Data
 _C.DATA = CN()
-_C.DATA.ROOT = 'PATH_TO_DATASET_KITTI_FORMAT'                  # Dataset directory
+_C.DATA.ROOT = '/home/jimmy/PythonProjects/monocon_na565/kitti_dataset/KITTIDataset'                  # Dataset directory
 _C.DATA.BATCH_SIZE = 8
 _C.DATA.NUM_WORKERS = 4
 _C.DATA.TRAIN_SPLIT = 'train'

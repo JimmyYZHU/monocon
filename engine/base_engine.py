@@ -192,7 +192,8 @@ class BaseEngine:
                         ckpt_file: str, 
                         verbose: bool = False) -> None:
         
-        engine_dict = torch.load(ckpt_file)
+        # FIXME: added map location
+        engine_dict = torch.load(ckpt_file, map_location='cuda:0')
         
         
         # Load Engine Attributes
