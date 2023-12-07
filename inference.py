@@ -52,11 +52,12 @@ if not os.path.exists(out_path):
     os.makedirs(out_path)
 
 # Inference on the Test Set
-for test_data in tqdm(engine.test_loader, desc="Running Inference..."):
-    test_data = move_data_device(test_data, engine.current_device)
-    inference_results = engine.model.batch_eval(test_data)
-    
-    # Use your utility function to convert inference results to KITTI format
-    kitti_3d_to_file(inference_results, test_data['img_metas'], out_path, single_file=False)
+with torch.no_grad():
+    for test_data in tqdm(engine.test_loader, desc="Running Inference..."):
+        test_data = move_data_device(test_data, engine.current_device)
+        inference_results = engine.model.batch_eval(test_data)
+        
+        # Use your utility function to convert inference results to KITTI format
+        kitti_3d_to_file(inference_results, test_data['img_metas'], out_path, single_file=False)
 
 tprint("Inference Completed. Results saved in:", out_path)
