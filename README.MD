@@ -116,23 +116,25 @@ Just edit the items in ```config/monocon_configs.py``` before execution.
 If your GPU memory is **less than 16GB**, please set ```_C.USE_BENCHMARK``` in ```config/monocon_configs.py``` to ```False```.
 ```bash
 python train.py
+# edit the config/monocon_configs.py for setup change
 ```
 
 ### Evaluation
+### Inference
 ```bash
+python inference.py  --config_file       [FILL]      # Config file (.yaml file)
+                --checkpoint_file   [FILL]      # Checkpoint file (.pth file)
+                --visualize         [Optional]            # Perform visualization (Qualitative Results)
+                --gpu_id            [Optional]  # Index of GPU to use for testing (Default: 0)
+                --save_dir          [FILL]      # Path where visualization results will be saved to
+```
+
+```bash
+# This is not used
 python test.py  --config_file       [FILL]      # Config file (.yaml file)
                 --checkpoint_file   [FILL]      # Checkpoint file (.pth file)
                 --gpu_id            [Optional]  # Index of GPU to use for testing (Default: 0)
                 --evaluate                      # Perform evaluation (Quantitative Results)
-```
-
-### Inference
-```bash
-python test.py  --config_file       [FILL]      # Config file (.yaml file)
-                --checkpoint_file   [FILL]      # Checkpoint file (.pth file)
-                --visualize                     # Perform visualization (Qualitative Results)
-                --gpu_id            [Optional]  # Index of GPU to use for testing (Default: 0)
-                --save_dir          [FILL]      # Path where visualization results will be saved to
 ```
 
 
