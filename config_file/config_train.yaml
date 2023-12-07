@@ -8,7 +8,7 @@ DATA:
     MIN_HEIGHT: 25
   NUM_WORKERS: 4
   ROOT: kitti_dataset/KITTIDataset
-  TEST_SPLIT: val
+  TEST_SPLIT: test
   TRAIN_SPLIT: train
 DESCRIPTION: MonoCon Default Configuration
 GPU_ID: 0

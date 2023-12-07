@@ -11,7 +11,7 @@ _C.SEED = -1                                     # -1: Random Seed Selection
 _C.GPU_ID = 0                                    # Index of GPU to use
 
 _C.USE_BENCHMARK = False                          # Value of 'torch.backends.cudnn.benchmark' and 'torch.backends.cudnn.enabled'
-
+_C.RESUME_DIR = None
 
 # Data
 _C.DATA = CN()
@@ -60,6 +60,6 @@ _C.SOLVER.CLIP_GRAD.MAX_NORM = 35
 
 # Period
 _C.PERIOD = CN()
-_C.PERIOD.EVAL_PERIOD = 10                      # In Epochs / Set -1 if you don't want validation
+_C.PERIOD.EVAL_PERIOD = 1                      # In Epochs / Set -1 if you don't want validation
 _C.PERIOD.LOG_PERIOD = 50                       # In Steps
 
