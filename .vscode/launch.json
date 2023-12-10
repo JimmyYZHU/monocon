@@ -8,7 +8,13 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "test.py",
+            "args": [
+                "--config_file", "config_file/config_train.yaml",
+                "--checkpoint_file", "checkpoint/epoch_110.pth",
+                "--save_dir", "visual/exp_epoch110",
+                "--visualize"
+            ],
             "console": "integratedTerminal",
             "justMyCode": true
         }

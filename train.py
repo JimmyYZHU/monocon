@@ -35,11 +35,11 @@ set_random_seed(seed)
 cfg.SEED = seed
 tprint(f"Using Random Seed {seed}")
 
+resume_dir  = cfg.RESUME_DIR
 
 # Initialize Engine
 engine = MonoconEngine(cfg)
 
-
 # Start Training from Scratch
 # Output files will be saved to 'cfg.OUTPUT_DIR'.
-engine.train()
+engine.train(resume_dir)

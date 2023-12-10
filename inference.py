@@ -19,9 +19,9 @@ parser.add_argument('--checkpoint_file',
                     type=str,
                     help="Path of the checkpoint file (.pth)")
 parser.add_argument('--gpu_id', type=int, default=0, help="Index of GPU to use for inference")
-parser.add_argument('--output_dir',
-                    type=str,
-                    help="Path of the directory to save the submission file")
+# parser.add_argument('--output_dir',
+#                     type=str,
+#                     help="Path of the directory to save the submission file")
 
 args = parser.parse_args()
 
@@ -47,7 +47,7 @@ tprint("Mode: Inference")
 engine.model.eval()
 
 # Ensure output directory exists
-out_path = args.output_dir
+out_path = cfg.OUTPUT_DIR
 if not os.path.exists(out_path):
     os.makedirs(out_path)
 

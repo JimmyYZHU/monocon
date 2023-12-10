@@ -171,6 +171,7 @@ class MonoconEngine(BaseEngine):
             vis_results = self.model.batch_eval(test_data, get_vis_format=True)
             vis_container.extend(vis_results)
             
+            
         if scale_hw is not None:
             tprint(f"Visualization will be progressed using scale factor {scale_hw}.")
         visualizer = Visualizer(self.test_dataset, vis_format=vis_container, scale_hw=scale_hw)

@@ -12,6 +12,20 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from transforms import BaseTransform
 
 
+class Blur(BaseTransform):
+    def __init__(self, kernel_size: int = 9):
+        super().__init__(True, False, False, False)
+        self.kernel_size = kernel_size
+        
+    def __call__(self, data_dict: Dict[str, Any]) -> Dict[str, Any]:
+        img = data_dict['img']
+        img = cv2.GaussianBlur(img, (self.kernel_size, self.kernel_size), 0)
+        
+        data_dict['img'] = img
+        
+        return data_dict
+
+
 class Resize3D(BaseTransform):
     def __init__(self, target_hw: Union[int, Tuple[int, int]] = None):
         super().__init__(True, True, True, True)

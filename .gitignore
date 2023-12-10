@@ -8,3 +8,7 @@ dataset/debug_tools.py
 debugger/
 kitti_dataset/
 output/
+.vscode/
+exps/
+data/
+visual/

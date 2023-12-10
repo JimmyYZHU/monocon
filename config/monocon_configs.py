@@ -15,7 +15,7 @@ _C.RESUME_DIR = None
 
 # Data
 _C.DATA = CN()
-_C.DATA.ROOT = '/home/jimmy/PythonProjects/monocon_na565/kitti_dataset/KITTIDataset'                  # Dataset directory
+_C.DATA.ROOT = '/home/jimmy/ZY/Graduate_Courses/ROB535/proj/DevKit/KITTIDataset_new/'                  # Dataset directory
 _C.DATA.BATCH_SIZE = 8
 _C.DATA.NUM_WORKERS = 4
 _C.DATA.TRAIN_SPLIT = 'train'
